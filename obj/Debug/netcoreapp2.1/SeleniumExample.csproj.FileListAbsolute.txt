@@ -1,0 +1,15 @@
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\chromedriver.exe
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.AssemblyInfoInputs.cache
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.AssemblyInfo.cs
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.dll
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.pdb
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\SeleniumExample.deps.json
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\SeleniumExample.runtimeconfig.json
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\SeleniumExample.runtimeconfig.dev.json
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\SeleniumExample.dll
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\bin\Debug\netcoreapp2.1\SeleniumExample.pdb
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.genruntimeconfig.cache
+C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\obj\Debug\netcoreapp2.1\SeleniumExample.csprojAssemblyReference.cache
