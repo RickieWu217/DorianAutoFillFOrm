@@ -114,6 +114,36 @@ namespace SeleniumExample
             Assert.IsTrue(true);
 
         }
+        
+        public void FillForm_TagName()
+        {
+
+
+        }
+
+        private int LimitCheckTImes = 5;
+        public bool FillForm_TagName_Check()
+        {
+            bool checkresult = false;
+            try
+            {
+                for (int i = 0; i < LimitCheckTImes; i++)
+                {
+                    if (true)
+                    {
+                        checkresult = true;
+                        break;   
+                    }
+                    Thread.Sleep(200);
+                }                            
+            }
+            catch (System.Exception)
+            {                
+                //throw;
+            }
+            
+            return checkresult;
+        }
 
     }
 
