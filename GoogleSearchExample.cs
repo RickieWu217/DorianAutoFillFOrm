@@ -9,6 +9,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace SeleniumExample
 {
@@ -19,7 +20,6 @@ namespace SeleniumExample
         public void SearchForSeleniumHQ()
         {
             Assert.IsTrue(true);
-
             return;
 
             //Find folder with Chrome Driver (chromedriver.exe)
@@ -85,64 +85,186 @@ namespace SeleniumExample
             }
         }
 
+        //https://www.w3schools.com/xml/xpath_syntax.asp
         [TestMethod]
         public void test()
         {
-            string fileName = @"C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\Excel\Data.xlsx";
-            var datas = MyServices.ParseExcelDataToObject<ExcelDto>(fileName).ToList();
-
-            foreach (var item in datas)
-            {
-                Console.WriteLine(JsonConvert.SerializeObject(item));
-            }
+            //string fileName = @"C:\Users\ed.wu\Downloads\Selenium-C-Sharp-Example-master\SeleniumExample\Excel\Data.xlsx";
+            //var datas = MyServices.ParseExcelDataToObject<ExcelDto>(fileName).ToList();
+            //
+            //foreach (var item in datas)
+            //{
+            //    Console.WriteLine(JsonConvert.SerializeObject(item));
+            //}
 
             var browserDriverPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
             //Set Chrome to start with maximized window
             ChromeOptions options = new ChromeOptions();
-            options.AddArguments("--start-maximized");
+            //options.AddArguments("--start-maximized");
 
             //Open Chrome
             using (var chromeDriver = new ChromeDriver(browserDriverPath, options))
             {
-                var select = new SelectElement(chromeDriver.FindElementById(""));
+                
+                var url = "https://gloriadata.tw/Hr/List";                    
+                try
+                {                    
+                    chromeDriver.Navigate().GoToUrl(url);                    
+                    var wait = new WebDriverWait(chromeDriver, new TimeSpan(0, 0, 0, 10));
 
-                //select.Options.Where(r => r.Text.Equals("")).FirstOrDefault().Selected;
+                    Module_Login(chromeDriver, wait);
+
+                    Main_Step_前往產學合作頁面(chromeDriver, wait);
+                    
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally {
+
+                    LogOut(chromeDriver);
+                    //close Chrome
+                    Thread.Sleep(5000);
+                    chromeDriver.Close();
+                
+                }
             }
 
             Console.ReadLine();
             Assert.IsTrue(true);
 
         }
-        
-        public void FillForm_TagName()
-        {
 
+
+        #region Login
+
+        public void Module_Login(ChromeDriver chromeDriver, WebDriverWait wait)
+        {
+            //step 1 open web https://gloriadata.tw/Hr/List 
+            //step 2 fill account 帳號：s0006 id: inputEmail
+            //step 2 fill pwd nchu22840558 <input type="text" id="inputEmail" class="form-control" placeholder="帳號" name="email" required="" autofocus="">
+            //step 2 click login button <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
+
+            Login_Step1_Fill_Account(chromeDriver, wait);
+
+            Login_Step2_Fill_PWD(chromeDriver, wait);
+
+            Login_Step3_ClickLoginBtn(chromeDriver, wait);            
+        }
+
+        public void Login_Step1_Fill_Account(ChromeDriver chromeDriver, WebDriverWait wait)
+        {
+            string domid = "inputEmail";
+            var _by = By.Id("inputEmail");
+
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_by));
+            var accountBox = chromeDriver.FindElement(_by);
+            accountBox.Clear();
+            accountBox.SendKeys("s0006");
+        }
+
+        public void Login_Step2_Fill_PWD(ChromeDriver chromeDriver, WebDriverWait wait)
+        {
+            string domid = "inputPassword";
+            var _by = By.Id("inputPassword");
+
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_by));
+            var accountBox = chromeDriver.FindElement(_by);
+            accountBox.Clear();
+            accountBox.SendKeys("nchu22840558");
+        }
+
+        public void Login_Step3_ClickLoginBtn(ChromeDriver chromeDriver, WebDriverWait wait)
+        {
+            string domid = "inputPassword";
+            
+            var element_Form =  wait.Until(r=>r.FindElement(By.TagName("form")));
+
+            var elButton = element_Form.FindElement(By.TagName("button"));
+
+            elButton.Click();
+        }
+
+        #endregion
+
+
+        public void Flow()
+        { 
+            //Step Login
+
+            //Step Add Data
+                        
+
+            //Step Logout
+        }
+
+        
+
+
+        #region 新增資料
+
+        public void Module_AddData(ChromeDriver chromeDriver, WebDriverWait wait)
+        {
+            string url_setData = "";
+
+            //刷新頁面確定是否要重新登入
+            if (IsAlive(chromeDriver))
+            {
+
+            }
+
+            //
+            AddData_前往產學合作頁面(chromeDriver, wait);
+
+
+            //確認資料類型來判斷新增步驟        
 
         }
 
-        private int LimitCheckTImes = 5;
-        public bool FillForm_TagName_Check()
+        public void AddData_前往產學合作頁面(ChromeDriver chromeDriver, WebDriverWait wait)
         {
-            bool checkresult = false;
-            try
-            {
-                for (int i = 0; i < LimitCheckTImes; i++)
-                {
-                    if (true)
-                    {
-                        checkresult = true;
-                        break;   
-                    }
-                    Thread.Sleep(200);
-                }                            
-            }
-            catch (System.Exception)
-            {                
-                //throw;
-            }
+            string xPath = "/li/a[@href='TechnologyTransferContract']";
+            var _by = By.XPath(xPath);
+
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_by));
+
+            var element = chromeDriver.FindElement(_by);
+
+            element.Click();
+        }
+
+        public void AddData_Step1_點擊按鍵()
+        { 
+        
+        }
+
+        #endregion
+
+        public bool IsUrlLike(string CueentUrl ,string ExpectedUrl)
+        {
+            return (CueentUrl.Contains(ExpectedUrl, StringComparison.CurrentCultureIgnoreCase));
+        }
+
+
+        public bool IsAlive(ChromeDriver chromeDriver)
+        {
+            bool isAlive = true;
             
-            return checkresult;
+            chromeDriver.Navigate().Refresh();
+            if (IsUrlLike(chromeDriver.Url, "Home/Login"))
+            {
+                isAlive = false;
+            }
+
+            return isAlive;
+        }
+
+        public void LogOut(ChromeDriver chromeDriver)
+        { 
+        
         }
 
     }

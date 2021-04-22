@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ed.wu\\Downloads\\Selenium-C-Sharp-Example-master\\SeleniumExample\\SeleniumExample.csproj": {}
+    "C:\\dev\\seleniumDemo\\DorianAutoFillFOrm\\SeleniumExample.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ed.wu\\Downloads\\Selenium-C-Sharp-Example-master\\SeleniumExample\\SeleniumExample.csproj": {
+    "C:\\dev\\seleniumDemo\\DorianAutoFillFOrm\\SeleniumExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ed.wu\\Downloads\\Selenium-C-Sharp-Example-master\\SeleniumExample\\SeleniumExample.csproj",
+        "projectUniqueName": "C:\\dev\\seleniumDemo\\DorianAutoFillFOrm\\SeleniumExample.csproj",
         "projectName": "SeleniumExample",
-        "projectPath": "C:\\Users\\ed.wu\\Downloads\\Selenium-C-Sharp-Example-master\\SeleniumExample\\SeleniumExample.csproj",
+        "projectPath": "C:\\dev\\seleniumDemo\\DorianAutoFillFOrm\\SeleniumExample.csproj",
         "packagesPath": "C:\\Users\\ed.wu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ed.wu\\Downloads\\Selenium-C-Sharp-Example-master\\SeleniumExample\\obj\\",
+        "outputPath": "C:\\dev\\seleniumDemo\\DorianAutoFillFOrm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
