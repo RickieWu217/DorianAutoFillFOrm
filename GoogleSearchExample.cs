@@ -144,8 +144,8 @@ namespace SeleniumExample
         public void Module_Login(ChromeDriver chromeDriver, WebDriverWait wait)
         {
             //step 1 open web https://gloriadata.tw/Hr/List 
-            //step 2 fill account 帳號：s0006 id: inputEmail
-            //step 2 fill pwd nchu22840558 <input type="text" id="inputEmail" class="form-control" placeholder="帳號" name="email" required="" autofocus="">
+            //step 2 fill account 帳號： id: 
+            //step 2 fill pwd  <input type="text" id="inputEmail" class="form-control" placeholder="帳號" name="email" required="" autofocus="">
             //step 2 click login button <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
 
             Login_Step1_Fill_Account(chromeDriver, wait);
@@ -163,7 +163,7 @@ namespace SeleniumExample
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_by));
             var accountBox = chromeDriver.FindElement(_by);
             accountBox.Clear();
-            accountBox.SendKeys("s0006");
+            accountBox.SendKeys("");
         }
 
         public void Login_Step2_Fill_PWD(ChromeDriver chromeDriver, WebDriverWait wait)
@@ -174,7 +174,7 @@ namespace SeleniumExample
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(_by));
             var accountBox = chromeDriver.FindElement(_by);
             accountBox.Clear();
-            accountBox.SendKeys("nchu22840558");
+            accountBox.SendKeys("");
         }
 
         public void Login_Step3_ClickLoginBtn(ChromeDriver chromeDriver, WebDriverWait wait)
